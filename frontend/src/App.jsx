@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Home from './Pages/Home'
+import Home from './Pages/Home/index.jsx'
 import DashboardLayout from './Layouts/DashboardLayout'
-import './App.css'
+
 
 function App() {
   const [count, setCount] = useState(0)
