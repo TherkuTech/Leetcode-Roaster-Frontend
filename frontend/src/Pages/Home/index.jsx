@@ -70,7 +70,7 @@ const Home = () => {
                                 />
                             </div>
                             <button 
-                                className="mt-[12px] p-[16px] rounded-xl w-full bg-blue-600 font-semibold text-lg text-white hover:bg-blue-500 duration-200 ease-in" 
+                                className="mt-[12px] p-[16px] rounded-xl w-full flex items-center justify-center bg-blue-600 font-semibold text-lg text-white hover:bg-blue-500 duration-200 ease-in" 
                                 type="submit"
                             >
                                 {loader ? <Spinner /> : "Roast"}
