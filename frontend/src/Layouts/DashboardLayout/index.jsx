@@ -7,7 +7,6 @@ const DashboardLayout = ({children}) => {
     console.log(children)
     return (
         <>
-            <h1>Helloworld</h1>
             <DashboardHeader/>
             {children}
             <DashboardFooter/>
