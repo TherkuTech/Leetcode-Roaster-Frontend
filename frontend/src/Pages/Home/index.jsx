@@ -55,7 +55,7 @@ const Home = () => {
                 <div className="p-[32px] sm:max-w-[500px] w-full flex flex-col gap-[32px] shadow-md rounded-xl bg-white">
                     <div className="flex flex-col md:gap-[8px] gap-[16px]">
                         <h1 className="text-3xl font-bold text-center">Leetcode Roaster</h1>
-                        <p className="text-center text-xl font-medium text-gray-600">Roast your Leetcode profile </p>
+                        <p className="text-center text-xl font-medium text-gray-600">Roast your Leetcode profile 🫡</p>
                     </div>
                     <div>
                         <form onSubmit={handleSubmit}>
