@@ -16,6 +16,3 @@ Just made a Leetcode Roaster web app for fun. This app roasts your Leetcode prof
 
 - Enter your Leetcode username
 - Get Roasted
-  
-## Backend
-Repository Link - https://github.com/TherkuTech/Leetcode-Roaster-Backend
