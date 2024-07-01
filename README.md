@@ -4,7 +4,7 @@ Just made a Leetcode Roaster web app for fun. This app roasts your Leetcode prof
 
 ## Built By
 
-Team Devoice
+[Team Devoice](https://www.linkedin.com/company/devoice/) ❄️
 
 ## Technologies Used
 
