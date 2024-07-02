@@ -57,13 +57,14 @@ const Home = () => {
                     'Content-Type': 'application/json'
                 }});
             setLoader(false);
-            
             setRoast(response.data.data); 
+            setSeconds(25);
         } catch (error) {
             setLoader(false);
             toast.error("Failed to Roast 🙃, Try Once Again");
             console.log(error.message);
         }
+         
     };
 
     return (
@@ -93,7 +94,7 @@ const Home = () => {
                                         className="mt-[12px] p-[16px] rounded-xl w-full flex items-center justify-center bg-blue-600 font-semibold text-lg text-white hover:bg-blue-500 duration-200 ease-in" 
                                         type="submit"
                                         onClick={() => {
-                                            setSeconds(20); // Start the timer with 20 seconds
+                                            // Start the timer with 20 seconds
                                             handleSubmit(); // Submit the form
                                         }}
                                     >
