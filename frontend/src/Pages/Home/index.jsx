@@ -29,19 +29,21 @@ const Home = () => {
         }, 1000);
     },[seconds])
 
-    const getLeetDetails = async () => {
-        try {
-            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}leets`, {
-                username: leetcodeUsername
-            });
-            const userData = response.data.message.matchedUser;
-            setLeetData(response.data.message.matchedUser);
-            return userData;
-        } catch (error) {
-            console.log(error);
-            throw error; 
+  const getLeetDetails = async () => {
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}leets`,
+        {
+          username: leetcodeUsername,
         }
-    };
+      );
+      const userData = response.data.message.matchedUser;
+      setLeetData(response.data.message.matchedUser);
+      return userData;
+    } catch (error) {
+      throw error;
+    }
+  };
 
     const handleSubmit = async () => {
         if (!leetcodeUsername) {
@@ -58,12 +60,11 @@ const Home = () => {
                     'Content-Type': 'application/json'
                 }});
             setLoader(false);
-            console.log(response);
+            setSeconds(20)
             setRoast(response.data.data); 
         } catch (error) {
             setLoader(false);
             toast.error("Failed to Roast 🙃, Try Once Again");
-            console.log(error.message);
         }
     };
 
@@ -94,7 +95,6 @@ const Home = () => {
                                         className="mt-[12px] p-[16px] rounded-xl w-full flex items-center justify-center bg-blue-600 font-semibold text-lg text-white hover:bg-blue-500 duration-200 ease-in" 
                                         type="submit"
                                         onClick={() => {
-                                            setSeconds(20); // Start the timer with 20 seconds
                                             handleSubmit(); // Submit the form
                                         }}
                                     >
