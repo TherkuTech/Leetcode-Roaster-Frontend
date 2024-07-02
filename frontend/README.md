@@ -10,10 +10,6 @@
 
 **Prepare for some spicy burns and hilarious truths about your LeetCode journey!**
 
-## Built By
-
-[Team Devoice](https://www.linkedin.com/company/devoice/) ❄️
-
 ## Technologies Used
 
 - **Frontend:** Vite + React.js
@@ -28,3 +24,7 @@
 **Disclaimer:** This is all in good fun. Don't take it too seriously (unless you deserve it 😉).
 
 **Ready to get roasted?** ➡️ [https://leetcode-roaster.netlify.app/](https://leetcode-roaster.netlify.app/)
+
+## Built By
+
+[Team Devoice](https://www.linkedin.com/company/devoice/) ❄️
