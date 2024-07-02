@@ -30,6 +30,7 @@ const Home = () => {
         }
         else{
             setSeconds(0);
+            return;
         }
     },[1000])
 
@@ -38,7 +39,7 @@ const Home = () => {
             toast.error("Please enter a valid Leetcode username");
             return;
         }
-        setSeconds(20);
+       
         setLoader(true);
         try {
             const userData = await getLeetDetails();
@@ -85,6 +86,7 @@ const Home = () => {
                                         type="submit"
                                         onClick={
                                             ()=>{
+                                                setSeconds(10);
                                                 handleSubmit()
                                             }
                                         }
