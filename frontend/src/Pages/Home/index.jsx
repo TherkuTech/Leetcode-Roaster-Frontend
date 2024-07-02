@@ -1,7 +1,7 @@
 import axios from "axios";
 import Spinner from "../../Components/Spinner";
 import toast, { Toaster } from 'react-hot-toast';
-import {  useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const Home = () => {
     const [leetcodeUsername, setLeetcodeUsername] = useState("");
@@ -9,6 +9,25 @@ const Home = () => {
     const [loader, setLoader] = useState(false);
     const [leetData, setLeetData] = useState(null);
     const [seconds, setSeconds] = useState(0);
+    const intervalRef = useRef(null);
+
+    useEffect(() => {
+        return () => {
+            clearInterval(intervalRef.current);
+        };
+    }, []);
+
+    useEffect(()=>{
+        clearInterval(intervalRef.current);
+        intervalRef.current = setInterval(() => {
+            if (seconds > 0) {
+                setSeconds((prevSeconds) => prevSeconds - 1);
+            } else {
+                clearInterval(intervalRef.current);
+            }
+            console.log(seconds)
+        }, 1000);
+    },[seconds])
 
     const getLeetDetails = async () => {
         try {
@@ -24,22 +43,11 @@ const Home = () => {
         }
     };
 
-    setTimeout(()=>{
-        if(seconds > 0){
-            setSeconds(seconds - 1);
-        }
-        else{
-            setSeconds(0);
-            return;
-        }
-    },[1000])
-
     const handleSubmit = async () => {
         if (!leetcodeUsername) {
             toast.error("Please enter a valid Leetcode username");
             return;
         }
-       
         setLoader(true);
         try {
             const userData = await getLeetDetails();
@@ -84,12 +92,10 @@ const Home = () => {
                                     <button 
                                         className="mt-[12px] p-[16px] rounded-xl w-full flex items-center justify-center bg-blue-600 font-semibold text-lg text-white hover:bg-blue-500 duration-200 ease-in" 
                                         type="submit"
-                                        onClick={
-                                            ()=>{
-                                                setSeconds(10);
-                                                handleSubmit()
-                                            }
-                                        }
+                                        onClick={() => {
+                                            setSeconds(20); // Start the timer with 20 seconds
+                                            handleSubmit(); // Submit the form
+                                        }}
                                     >
                                         {loader ? <Spinner /> : "Roast"}
                                     </button>
