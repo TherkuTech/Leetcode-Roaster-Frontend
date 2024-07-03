@@ -118,7 +118,7 @@ const Home = () => {
                     )}
                     <div>
                         <p className="text-center text-lg font-medium text-gray-600">
-                            Made by <a href="https://github.com/TherkuTech/Leetcode-Roaster-Frontend" target="_blank" className="text-blue-600">Devoice</a>
+                            Made by <a href="https://github.com/TherkuTech/Leetcode-Roaster-Frontend" target="_blank" className="text-blue-600">Devoice🔗</a>
                         </p>
                     </div>
                 </div>
