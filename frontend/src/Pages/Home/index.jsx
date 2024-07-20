@@ -45,8 +45,7 @@ const Home = () => {
     }
   };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent default form submission
+    const handleSubmit = async () => {
         if (!leetcodeUsername) {
             toast.error("Please enter a valid Leetcode username");
             return;
@@ -78,37 +77,39 @@ const Home = () => {
                         <h1 className="text-3xl font-bold text-center">Leetcode Roaster </h1>
                         <p className="text-center text-xl font-medium text-gray-600">Provide username, get roasted🫡</p>
                     </div>
-                    <form onSubmit={handleSubmit}>
+                    <div>
                         <div>
                             <div>
-                                <input
-                                    onChange={(e) => setLeetcodeUsername(e.target.value)}
+                                <input 
+                                    onChange={(e) => setLeetcodeUsername(e.target.value)} 
                                     value={leetcodeUsername}
-                                    id="lc_username"
-                                    type="text"
-                                    placeholder="Enter Your Leetcode Username"
-                                    className="w-full p-[16px] text-xl rounded-xl outline-0 border-2 border-gray-400 hover:border-blue-400 focus:border-blue-500"
+                                    id="lc_username" 
+                                    type="text" 
+                                    placeholder="Enter Your Leetcode Username" 
+                                    className="w-full p-[16px] text-xl rounded-xl outline-0 border-2 border-gray-400 hover:border-blue-400 focus:border-blue-500" 
                                 />
                             </div>
                             {
                                 (seconds === 0) ? (
-                                    <button
-                                        className="mt-[12px] p-[16px] rounded-xl w-full flex items-center justify-center bg-blue-600 font-semibold text-lg text-white hover:bg-blue-500 duration-200 ease-in"
+                                    <button 
+                                        className="mt-[12px] p-[16px] rounded-xl w-full flex items-center justify-center bg-blue-600 font-semibold text-lg text-white hover:bg-blue-500 duration-200 ease-in" 
                                         type="submit"
+                                   onClick={() => {
+                                            handleSubmit(); // Submit the form
+                                        }}
                                     >
                                         {loader ? <Spinner /> : "Roast"}
                                     </button>
                                 ) : (
-                                    <button
-                                        className="mt-[12px] p-[16px] rounded-xl w-full flex items-center justify-center bg-gray-400 font-semibold text-lg text-white hover:bg-gray-300 duration-200 ease-in"
-                                        type="button"
+                                    <button 
+                                        className="mt-[12px] p-[16px] rounded-xl w-full flex items-center justify-center bg-gray-400 font-semibold text-lg text-white hover:bg-gray-300 duration-200 ease-in" 
                                     >
                                         Wait for {seconds} seconds
                                     </button>
                                 )
                             }
                         </div>
-                    </form>
+                    </div>
                     {roast && (
                         <div className="bg-gray-200 p-[16px]">
                             <h1 className="font-medium text-xl">Roast</h1>
